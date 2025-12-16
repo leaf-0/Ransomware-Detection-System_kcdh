@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* No global colors; components decide their own colors */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+}
+
+:root {
+  --bg: #0b0f1a;
+  --panel: #121826;
+  --panel-2: #0f1522;
+  --text: #e5e7eb;
+  --muted: #9aa3b2;
+  --accent: #60a5fa;
+  --accent-2: #22d3ee;
+  --danger: #ef4444;
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --ring: rgba(96, 165, 250, 0.35);
+}
+
+html, body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #233048;
+  border-radius: 9999px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.card {
+  background: linear-gradient(180deg, var(--panel), var(--panel-2));
+  border: 1px solid #1f2a3d;
+  border-radius: 12px;
+}
+
+.input {
+  background: #0b1220;
+  border: 1px solid #1f2a3d;
+  color: var(--text);
+  border-radius: 10px;
+  padding: 10px 12px;
+  outline: none;
+}
+.input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--ring);
+}
+
+.btn {
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-weight: 600;
+}
+.btn-primary {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #0b0f1a;
+}
+.btn-primary:hover {
+  filter: brightness(1.05);
+}
+.btn-secondary {
+  background: #0b1220;
+  border: 1px solid #263247;
+  color: var(--text);
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 9999px;
+  padding: 4px 10px;
+  font-size: 12px;
+  border: 1px solid #263247;
+  background: #0b1220;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table th, .table td {
+  border-bottom: 1px solid #1f2a3d;
+  padding: 10px 12px;
+}
+.table th {
+  text-align: left;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+}
+.table tr:hover td {
+  background: #0c1423;
+}
